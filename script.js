@@ -106,19 +106,25 @@ function buildPlaylist() {
      a variable called `songs` that gets assigned the same
      way, based on `mode`.
 
+
      🤔 GUIDING QUESTION FOR YOUR TEAM:
      If you added a third mode (e.g. "shuffleMode"), what
      would you add — another `else if`? What should it set
      `songs` to? Talk through it before you code your
      game's difficulty modes.
-
+*
      YOUR CODE GOES HERE:
-     1. Get the selected mode from modeSelector.value
-     2. Declare a `songs` variable
-     3. Write an if / else if that assigns `songs` based on
-        the mode
-     ===================================================== */
-
+     1. Get the selected mode from modeSelector.value*/
+  const modeSelector = document.getElementById("mode-selector");
+     console.log(modeSelector);
+    let songs;
+    if (modeSelector.value == "quickPlay"){
+    const QuickSongs = allSongs.slice(0,3);
+     console.log(QuickSongs);
+     
+    } else if(modeSelector.value == "fullSession") {
+     console.log(allSongs);
+    }
 
 
   /* =====================================================
@@ -136,7 +142,9 @@ function buildPlaylist() {
      - Reset songsRemovedCount to 0 and clear milestone text
        (so a fresh playlist starts its milestone count over)
      - Check if `songs.length === 0`:
-         - If true: set feedback.textContent to a "no songs
+
+        /*
+         If true: set feedback.textContent to a "no songs
            found" message, and feedback.className to
            "feedback-box error"
          - If false: set feedback.textContent to a message
